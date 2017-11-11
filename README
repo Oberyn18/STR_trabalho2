@@ -1,0 +1,70 @@
+Real-Time Sand box
+
+A few simple tools to explore linux real-time capabilities.
+
+INSTALL
+--------------------------------------------------
+
+* Quick instructions:
+
+$ ./configure
+$ make
+
+Optionally, if you wish to build and install the software under /tmp/foo
+
+$ ./configure --prefix=/tmp/foo
+$ make
+$ make install
+
+This will install also scene files under /tmp/foo/share/rtsb.
+
+Make sure you have libncurses5 (on debian-based systems, apt-get install libncurses5.dev) and that pthreds are supported.
+
+* Detailed instructions: read INSTALL
+
+PROGRAM EXECUTION
+--------------------------------------------------
+
+Usage:  asciiplay [path]
+
+The program will try load scenes from the directory 'path/scenes' 
+
+If you ommit the argument, path defaults to current directory.
+
+To run the program from the project's directory, issue 
+
+$ src/asciiplay
+
+If you have installed the software you may, instead, issue
+
+$ asciiplay
+
+(make sure the binary is in your executable's path).
+
+FUNCTIONALITY
+--------------------------------------------------
+
+The program will load scene files from the scenes directory.
+
+Controls:
+
+	+ decreases the interframe delay 
+	- increases the interframe delay 
+	u increases skew rate
+	d decreases skew rate
+	l starts logging
+	s stops logging
+	q quits
+
+Asciiplay will cycle through the scenes until the user press 'q' or Ctr-C.
+
+The user may control the duration of each frame by adjusting the parameter 'delay', which specify the number of microsseconds each scene should be exhibited. The program performs the delay behavior by issuing a kernel syscall through the POSIX function nanosleep.  If the kernel is not a real-time kernel, this delay may not be very precise.
+
+In order to simulate different hardware speed, the parameter 'skew' is added to the frame interval, so that the program will actually pause for 'delay'+'skew' microsseconds. The user may adjust skew through keys 'u' (up) and 'd' (down).
+
+The user press 'l' and 's' to start and stop logging, respectively. This will cause the program to output some values on the file 'log.txt'.  This file will have five columns:  Frame number, elapsed time between frames, minimum elapsed time so far, maximum elapsed time so far, and the frame-per-second value. This last value, FPS, is computed by the program through gettimeofday. 
+
+The computed FPS is the actual frame-per-second value.
+
+The script 'liveplot.gnuplot' may be used to show a real-time plot of the obtained FPS value.
+
