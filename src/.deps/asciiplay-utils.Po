@@ -1,41 +1,43 @@
 asciiplay-utils.o: utils.c /usr/include/stdc-predef.h \
- /usr/include/sys/time.h /usr/include/features.h /usr/include/sys/cdefs.h \
- /usr/include/bits/wordsize.h /usr/include/bits/long-double.h \
- /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
- /usr/include/bits/types.h /usr/include/bits/typesizes.h \
- /usr/include/bits/types/time_t.h \
- /usr/include/bits/types/struct_timeval.h /usr/include/sys/select.h \
- /usr/include/bits/select.h /usr/include/bits/sigset.h \
- /usr/include/bits/types/struct_timespec.h
+ /usr/include/x86_64-linux-gnu/sys/time.h /usr/include/features.h \
+ /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+ /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+ /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h /usr/include/time.h \
+ /usr/include/x86_64-linux-gnu/bits/time.h \
+ /usr/include/x86_64-linux-gnu/sys/select.h \
+ /usr/include/x86_64-linux-gnu/bits/select.h \
+ /usr/include/x86_64-linux-gnu/bits/sigset.h \
+ /usr/include/x86_64-linux-gnu/bits/select2.h
 
 /usr/include/stdc-predef.h:
 
-/usr/include/sys/time.h:
+/usr/include/x86_64-linux-gnu/sys/time.h:
 
 /usr/include/features.h:
 
-/usr/include/sys/cdefs.h:
+/usr/include/x86_64-linux-gnu/sys/cdefs.h:
 
-/usr/include/bits/wordsize.h:
+/usr/include/x86_64-linux-gnu/bits/wordsize.h:
 
-/usr/include/bits/long-double.h:
+/usr/include/x86_64-linux-gnu/gnu/stubs.h:
 
-/usr/include/gnu/stubs.h:
+/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
 
-/usr/include/gnu/stubs-64.h:
+/usr/include/x86_64-linux-gnu/bits/types.h:
 
-/usr/include/bits/types.h:
+/usr/include/x86_64-linux-gnu/bits/typesizes.h:
 
-/usr/include/bits/typesizes.h:
+/usr/include/time.h:
 
-/usr/include/bits/types/time_t.h:
+/usr/include/x86_64-linux-gnu/bits/time.h:
 
-/usr/include/bits/types/struct_timeval.h:
+/usr/include/x86_64-linux-gnu/sys/select.h:
 
-/usr/include/sys/select.h:
+/usr/include/x86_64-linux-gnu/bits/select.h:
 
-/usr/include/bits/select.h:
+/usr/include/x86_64-linux-gnu/bits/sigset.h:
 
-/usr/include/bits/sigset.h:
-
-/usr/include/bits/types/struct_timespec.h:
+/usr/include/x86_64-linux-gnu/bits/select2.h:

@@ -33,11 +33,20 @@ void select_scheduler (void)
 {
   struct sched_param param;
   int rs;
-
+  
+  /*Estava assim antes:
   param.sched_priority = 0;
-  rs = sched_setscheduler(0, SCHED_OTHER, &param);
-  sysfatal (rs);
+  rs = sched_setscheduler(0, SCHED_OTHER, &param);*/
+  
+  /*Mudanca para o exercicio 5:*/
+  param.sched_priority = sched_get_priority_max(2);
+  rs = sched_setscheduler(0, SCHED_RR, &param);
 
+  /*Outra mudança que pode ser feita (SCHED_FIFO para SCHED_RR):
+  param.sched_priority = sched_get_priority_max(2);
+  rs = sched_setscheduler(0, SCHED_RR, &param);*/
+
+  sysfatal (rs);
 }
 
 /* Draw a the given scene on the screen. Currently, this iterates through the
