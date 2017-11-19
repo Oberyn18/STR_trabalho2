@@ -44,8 +44,13 @@ int main (int argc, char **argv)
       exit (EXIT_FAILURE);
     }
 
-  param.sched_priority = SCHEDULER_PRIORITY;
-  rs = sched_setscheduler(0, SCHEDULER_POLICY, &param);
+  /*param.sched_priority = SCHEDULER_PRIORITY;
+  rs = sched_setscheduler(0, SCHEDULER_POLICY, &param);*/
+
+  param.sched_priority = sched_get_priority_max(2);
+  rs = sched_setscheduler(0, SCHED_RR, &param);
+
+
   sysfatal (rs);
 
 

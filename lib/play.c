@@ -44,7 +44,7 @@ void select_scheduler (void)
 
   /*Outra mudança que pode ser feita (SCHED_FIFO para SCHED_RR):
   param.sched_priority = sched_get_priority_max(2);
-  rs = sched_setscheduler(0, SCHED_RR, &param);*/
+  rs = sched_setscheduler(0, SCHED_FIFO, &param);*/
 
   sysfatal (rs);
 }
